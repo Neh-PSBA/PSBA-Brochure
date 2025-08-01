@@ -1,0 +1,1708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSB Alliance: Powering the Future of Indian Banking</title>
+    <!-- Tailwind CSS CDN for easy styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+  :root {
+    --primary-blue: #2563eb;
+    --hover-blue: #1d4ed8;
+    --light-blue: #e0f2fe;
+    --text-dark: #1e293b;
+    --text-light: #64748b;
+    --accent-gradient: linear-gradient(to right, #c7d2fe, #e0f2fe);
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc;
+    color: var(--text-dark);
+    line-height: 1.6;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+
+  .section-active {
+    display: block !important;
+  }
+
+  .hidden-section {
+    display: none;
+  }
+
+  .interactive-button {
+    @apply bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-medium py-3 px-6 rounded-full shadow transition-all duration-300 ease-in-out transform hover:scale-105;
+    box-shadow: 0 6px 14px rgba(37, 99, 235, 0.2);
+  }
+
+  .nav-item {
+    @apply text-white hover:text-blue-200 px-4 py-2 rounded-md transition duration-300 ease-in-out;
+  }
+
+  .nav-item.active {
+    background-color: var(--hover-blue);
+    color: white;
+  }
+
+  .journey-card {
+    @apply bg-white p-6 rounded-2xl shadow-md flex flex-col items-center justify-center text-center cursor-pointer hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1;
+    border: 1px solid #e5e7eb;
+  }
+
+  .journey-card:hover {
+    border-color: var(--primary-blue);
+  }
+
+  .journey-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+  }
+
+  .home-background-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    border-radius: 0.75rem;
+  }
+
+  .home-background-video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+  }
+
+  .animated-headline {
+    animation: fadeInScale 1.2s ease-out forwards;
+  }
+
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  #journey-message-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    backdrop-filter: blur(4px);
+  }
+
+  #journey-message-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .journey-message-box {
+    background-color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 1.25rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    max-width: 600px;
+    text-align: center;
+    width: 90%;
+    animation: slideIn 0.5s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  @keyframes slideIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .product-badge {
+    @apply inline-block bg-blue-100 text-blue-800 text-sm font-medium px-4 py-1.5 rounded-lg mr-2 shadow-sm;
+    border: 1px solid #93c5fd;
+  }
+
+  .product-badge:hover {
+    background-color: #bfdbfe;
+    box-shadow: 0 2px 6px rgba(59, 130, 246, 0.2);
+  }
+
+  .stat-card {
+    @apply bg-white p-8 rounded-2xl shadow flex flex-col items-center justify-center text-center;
+  }
+
+  .stat-number {
+    @apply text-5xl font-bold text-blue-800 mb-2;
+  }
+
+  .stat-description {
+    @apply text-gray-600 text-lg;
+  }
+
+  .alliance-network-visual {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .alliance-network-visual img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .product-card {
+  position: relative;
+  background: linear-gradient(to bottom right, #ffffff, #eff6ff); /* from-white to-blue-50 */
+  padding: 2rem;
+  border-radius: 1rem; /* rounded-2xl */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); /* shadow-md */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #cbd5e1;
+  transition: all 0.4s ease-in-out;
+  transform: scale(1);
+}
+
+  .product-card:hover {
+    transform: scale(1.03) translateY(-4px);
+    box-shadow: 0 12px 24px rgba(37, 99, 235, 0.15);
+    border-color: var(--primary-blue);
+  }
+
+  .product-card::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+  }
+
+  .product-card:hover::before {
+    opacity: 1;
+    animation: cardGlow 2s infinite alternate;
+  }
+
+  @keyframes cardGlow {
+    from {
+      transform: scale(1);
+      opacity: 0.05;
+    }
+    to {
+      transform: scale(1.05);
+      opacity: 0.15;
+    }
+  }
+
+  .product-card h3 {
+  color: #1e40af; /* text-blue-800 */
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 600; /* font-semibold */
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 10;
+}
+
+  .product-card p {
+    @apply text-gray-700 mb-6 relative z-10;
+  }
+
+  .product-card .interactive-button {
+    @apply bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-110;
+    z-index: 10;
+    letter-spacing: 0.05em;
+  }
+
+  .quiz-container {
+    @apply bg-gradient-to-br from-white to-blue-50 p-8 rounded-2xl shadow-md border border-blue-200;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .quiz-question {
+    @apply text-2xl font-medium text-blue-800 mb-6 text-center;
+  }
+
+  .quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* space-y-6 */
+  width: 100%;
+  max-width: 28rem; /* Tailwind's max-w-md */
+  margin: 0 auto;
+}
+
+.quiz-option-button {
+  background-color: white;
+  color: #1f2937; /* text-gray-800 */
+  font-weight: 500;
+  font-size: 1.125rem; /* text-lg */
+  line-height: 1.6;
+  padding: 1.25rem 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e0e7ff;
+  background-image: linear-gradient(to right, #ffffff, #f0f8ff);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease-in-out;
+  text-align: left;
+  cursor: pointer;
+}
+  .quiz-option-button:hover {
+  background-color: #eff6ff;
+  border-color: #60a5fa;
+  transform: scale(1.02);
+}
+
+  .quiz-option-button.correct {
+    background-color: #d1fae5;
+    border-color: #34d399;
+    color: #065f46;
+    animation: pulseGreen 0.6s ease-out;
+  }
+
+  .quiz-option-button.incorrect {
+    background-color: #fee2e2;
+    border-color: #f87171;
+    color: #991b1b;
+    animation: shakeRed 0.5s ease-out;
+  }
+
+  .quiz-option-button.disabled {
+    @apply opacity-70 cursor-not-allowed;
+  }
+
+  .quiz-option-button.correct::after {
+    content: ' \2714';
+    color: #10b981;
+    font-size: 1.5em;
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%) scale(0);
+    animation: checkmarkScaleIn 0.3s forwards;
+  }
+
+  .quiz-option-button.incorrect::after {
+    content: ' \2716';
+    color: #ef4444;
+    font-size: 1.5em;
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%) scale(0);
+    animation: crossScaleIn 0.3s forwards;
+  }
+
+  @keyframes checkmarkScaleIn {
+    from { transform: translateY(-50%) scale(0); opacity: 0; }
+    to { transform: translateY(-50%) scale(1); opacity: 1; }
+  }
+
+  @keyframes crossScaleIn {
+    from { transform: translateY(-50%) scale(0); opacity: 0; }
+    to { transform: translateY(-50%) scale(1); opacity: 1; }
+  }
+
+  .quiz-feedback {
+    @apply mt-6 text-xl font-medium text-center py-3 px-6 rounded-xl;
+    animation: fadeInSlideUp 0.4s ease-out forwards;
+  }
+
+  .quiz-feedback.correct {
+    @apply text-green-700 bg-green-50;
+  }
+
+  .quiz-feedback.incorrect {
+    @apply text-red-700 bg-red-50;
+  }
+
+  @keyframes fadeInSlideUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pulseGreen {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+  }
+
+  @keyframes shakeRed {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-6px); }
+    40%, 80% { transform: translateX(6px); }
+  }
+
+  .quiz-action-buttons {
+    @apply mt-6 flex gap-4 justify-center;
+  }
+
+  .customer-choice-button {
+    @apply bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-5 px-10 rounded-2xl shadow-xl transition duration-300 ease-in-out transform hover:scale-105 text-2xl;
+    min-width: 280px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .banker-quiz-back-button {
+    @apply bg-gray-600 hover:bg-gray-700 text-white font-medium py-2 px-6 rounded-lg shadow transition duration-300 ease-in-out transform hover:scale-105 mt-8;
+  }
+</style>
+
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header/Navigation Bar -->
+    <header class="bg-blue-800 text-white shadow-lg p-4">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <h1 class="text-3xl font-bold mb-2 md:mb-0">PSB Alliance</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><button class="nav-item active" data-section="home">Home</button></li>
+                    <li><button class="nav-item" data-section="about">About Us</button></li>
+                    <li><button class="nav-item" data-section="products">Our Products</button></li>
+                    <li><button class="nav-item" data-section="why-partner">Why Partner?</button></li>
+                    <li><button class="nav-item" data-section="contact">Contact</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow container mx-auto p-6 md:p-8">
+
+        <!-- Home Section -->
+        <section id="home" class="section-active bg-white rounded-xl shadow-lg p-8 mb-8 text-center relative">
+            <!-- Background Video for Home Section -->
+            <div class="home-background-video-container">
+                <video autoplay loop muted playsinline class="home-background-video">
+                    <source src="broc vid 1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <!-- Optional: Overlay for better text readability -->
+                <div class="absolute inset-0 bg-black opacity-30 rounded-xl"></div>
+            </div>
+
+            <!-- Main Headline (reverted to text with animation) -->
+            <h2 class="text-5xl font-extrabold text-blue-800 mb-4 animated-headline relative z-10">
+                Powering the Future of Indian Banking
+            </h2>
+
+            <p class="text-lg text-gray-700 mb-6 max-w-3xl mx-auto relative z-10">
+                Discover how PSB Alliance can transform your banking experience.
+                <br>
+                **Choose your journey below:**
+            </p>
+
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-8 mt-8 relative z-10">
+                <!-- Banker Journey Card using banker.png -->
+                <div class="journey-card w-full md:w-1/2 lg:w-1/3" onclick="startJourney('banker')">
+                    <img src="banker.png" alt="I'm a Banker" class="w-full h-auto object-contain">
+                </div>
+
+                <!-- Customer Journey Card using customer.png -->
+                <div class="journey-card w-full md:w-1/2 lg:w-1/3" onclick="startJourney('customer')">
+                    <img src="customer.png" alt="I'm a Customer" class="w-full h-auto object-contain">
+                </div>
+            </div>
+
+            <!-- Interactive "Impact" Statistics Section -->
+            <div class="mt-12 relative z-10">
+                <h3 class="text-3xl font-bold text-blue-800 mb-6">Our Impact at a Glance</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="25000000">0</div>
+                        <div class="stat-description">Customers Benefited</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="1000000000">0</div>
+                        <div class="stat-description">Transactions Processed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="75">0</div>
+                        <div class="stat-description">% Efficiency Gain for Banks</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- "The Power of PSB Alliance" Interactive Visual Section -->
+            <div class="mt-12 relative z-10">
+                <h3 class="text-3xl font-bold text-blue-800 mb-6">The Power of PSB Alliance</h3>
+                <div class="alliance-network-visual">
+                    <!-- The image with usemap attribute -->
+                    <img src="psb_alliance_network.png" alt="PSB Alliance United Network" usemap="#psb-alliance-map">
+
+                    <!-- Image Map for Interactive Nodes -->
+                    <map name="psb-alliance-map">
+                        <!-- Main Nodes -->
+                        <area shape="circle" coords="230,170,30" href="#" onclick="showNodeInfo('Enhanced Security', 'Fortifying financial data with advanced protection protocols and robust cyber defenses.'); return false;" alt="Security Icon">
+                        <area shape="circle" coords="910,180,30" href="#" onclick="showNodeInfo('Customer-Centric Solutions', 'Designing intuitive and accessible services that prioritize user experience and convenience.'); return false;" alt="User Icon">
+                        <area shape="circle" coords="1000,360,30" href="#" onclick="showNodeInfo('Scalable Cloud Infrastructure', 'Leveraging modern cloud technology for flexible, high-performance, and resilient banking operations.'); return false;" alt="Cloud Icon">
+                        <area shape="circle" coords="880,600,30" href="#" onclick="showNodeInfo('Driving Financial Growth', 'Empowering banks and customers with tools and platforms for sustainable economic development.'); return false;" alt="Growth Icon">
+                        <area shape="circle" coords="280,610,30" href="#" onclick="showNodeInfo('Unified Banking Network', 'Connecting 12 Public Sector Banks into a cohesive and powerful digital alliance.'); return false;" alt="Bank Icon">
+                        <area shape="circle" coords="150,390,25" href="#" onclick="showNodeInfo('Future-Ready Innovation', 'Continuously exploring and integrating cutting-edge technologies to stay ahead in the digital era.'); return false;" alt="Innovation Icon">
+
+                        <!-- Glowing Nodes (Micro-Interactivity) -->
+                        <area shape="circle" coords="360,220,12" href="#" onclick="showNodeInfo('Seamless Connectivity', 'Ensuring smooth data flow across the entire PSB Alliance network.'); return false;" alt="Connectivity Node 1">
+                        <area shape="circle" coords="750,290,12" href="#" onclick="showNodeInfo('Real-time Data Exchange', 'Facilitating instant and secure information sharing for informed decisions.'); return false;" alt="Connectivity Node 2">
+                        <area shape="circle" coords="200,550,12" href="#" onclick="showNodeInfo('Interoperable Systems', 'Building bridges between diverse banking platforms for unified operations.'); return false;" alt="Connectivity Node 3">
+
+                        <!-- Central Logo (Optional Interactivity) -->
+                        <area shape="circle" coords="580,380,55" href="#" onclick="showNodeInfo('PSB Alliance Core', 'The heart of digital transformation for Public Sector Banks in India.'); return false;" alt="Central Logo">
+                    </map>
+                </div>
+                <p class="text-gray-700 mt-4 max-w-2xl mx-auto">
+                    Uniting 12 Public Sector Banks to forge a stronger, more efficient, and digitally advanced Indian banking ecosystem. Click on the glowing points to learn more!
+                </p>
+            </div>
+
+
+            <!-- Introductory video (original placeholder) -->
+            <div class="mt-8 relative z-10">
+                <div class="aspect-video w-full max-w-4xl mx-auto bg-gray-200 rounded-lg flex items-center justify-center text-gray-500 overflow-hidden">
+                    <video controls class="w-full h-full object-cover" poster="https://placehold.co/1280x720/000000/FFFFFF?text=PSB+Alliance+Intro+Video">
+                        <source src="your_intro_video.mp4" type="video/mp4">
+                        Your browser does not support the video tag. Please use a modern browser.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="hidden-section bg-white rounded-xl shadow-lg p-8 mb-8">
+            <h2 class="text-3xl font-bold text-blue-800 mb-6">About PSB Alliance</h2>
+            <p class="text-gray-700 mb-4">
+                PSB Alliance was established by a consortium of 12 Public Sector Banks to drive technological innovation and enhance customer service across the Indian banking sector. Our unique foundation allows us to understand the intricate needs of the industry and deliver tailored, robust solutions.
+            </p>
+            <p class="text-gray-700 mb-6">
+                We are committed to fostering a new era of digital banking, empowering financial institutions with cutting-edge technology and seamless integration, ultimately benefiting millions of customers.
+            </p>
+            <!-- PSBA MAP.jpg Image for the roadmap -->
+            <div class="w-full max-w-4xl mx-auto mt-8 rounded-lg shadow-md overflow-hidden">
+                <img src="PSBA MAP.jpg" alt="PSB Alliance Product Roadmap" class="w-full h-auto object-contain">
+            </div>
+        </section>
+
+        <!-- Our Products Section -->
+<section id="products" class="hidden-section bg-white rounded-2xl shadow-xl p-10 mb-10">
+  <h2 class="text-4xl font-extrabold text-blue-800 mb-10 text-center tracking-tight">
+    Our Product Quests
+  </h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    
+    <!-- Product Card Template -->
+    <!-- Doorstep Banking -->
+    <div class="product-card" onclick="showProductDetails('doorstep-banking')">
+      <h3 class="text-2xl font-bold text-blue-700 mb-2">Doorstep Banking Services</h3>
+      <p class="text-gray-600 text-base leading-relaxed mb-4">
+        Bringing essential banking services directly to customers’ homes and offices, enhancing convenience and accessibility.
+      </p>
+      <div class="flex flex-wrap gap-2 mb-5 justify-center md:justify-start">
+        <span class="product-badge">Customer Convenience</span>
+        <span class="product-badge">Operational Efficiency</span>
+      </div>
+      <div class="w-full flex justify-center md:justify-start">
+        <button class="interactive-button mt-auto">Explore Product</button>
+      </div>
+    </div>
+
+    <!-- Baanknet -->
+    <div class="product-card" onclick="showProductDetails('baanknet')">
+      <h3 class="text-2xl font-bold text-blue-700 mb-2">Baanknet.com</h3>
+      <p class="text-gray-600 text-base leading-relaxed mb-4">
+        A centralized platform for listing and auctioning NPA properties, ensuring transparency and efficiency across banks.
+      </p>
+      <div class="flex flex-wrap gap-2 mb-5 justify-center md:justify-start">
+        <span class="product-badge">NPA Recovery</span>
+        <span class="product-badge">Transparency</span>
+      </div>
+      <div class="w-full flex justify-center md:justify-start">
+        <button class="interactive-button mt-auto">Explore Product</button>
+      </div>
+    </div>
+
+    <!-- DBCP -->
+    <div class="product-card" onclick="showProductDetails('dbcp')">
+      <h3 class="text-2xl font-bold text-blue-700 mb-2">Digital Balance Confirmation Portal (DBCP)</h3>
+      <p class="text-gray-600 text-base leading-relaxed mb-4">
+        Streamlining the balance confirmation process for auditors and banks through a secure, paperless platform.
+      </p>
+      <div class="flex flex-wrap gap-2 mb-5 justify-center md:justify-start">
+        <span class="product-badge">Audit Compliance</span>
+        <span class="product-badge">Efficiency Boost</span>
+      </div>
+      <div class="w-full flex justify-center md:justify-start">
+        <button class="interactive-button mt-auto">Explore Product</button>
+      </div>
+    </div>
+
+    <!-- PSBXCHANGE -->
+    <div class="product-card" onclick="showProductDetails('psb-exchange')">
+      <h3 class="text-2xl font-bold text-blue-700 mb-2">PSBXCHANGE (Digital Supply Chain Finance)</h3>
+      <p class="text-gray-600 text-base leading-relaxed mb-4">
+        A digital-first solution facilitating efficient, transparent supply chain finance for MSMEs and institutions.
+      </p>
+      <div class="flex flex-wrap gap-2 mb-5 justify-center md:justify-start">
+        <span class="product-badge">Liquidity Solution</span>
+        <span class="product-badge">MSME Empowerment</span>
+      </div>
+      <div class="w-full flex justify-center md:justify-start">
+        <button class="interactive-button mt-auto">Explore Product</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+            <!-- Product Detail Modals/Sections (initially hidden) -->
+            <div id="product-details-container" class="mt-8">
+                <!-- Doorstep Banking Details -->
+                <div id="doorstep-banking-details" class="hidden-section product-detail-card bg-blue-50 p-6 rounded-lg shadow-inner mt-4">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-4">Doorstep Banking Services - Deep Dive</h3>
+
+                    <!-- Multi-choice quiz for Doorstep Banking -->
+                    <div id="doorstep-banking-quiz-container" class="quiz-container w-full max-w-2xl mx-auto mb-6">
+                        <!-- Quiz content will be rendered here by JavaScript -->
+                    </div>
+
+                    <div class="mb-6">
+                        <h4 class="text-xl font-semibold text-blue-700 mb-3">Problems Solved for Banks:</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Expanding Customer Reach:</strong> Effectively serves segments like senior citizens, physically challenged individuals, and those in remote locations without needing to expand physical branches.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Operational Efficiency & Resource Optimization:</strong> Streamlines routine banking services, freeing up branch staff for higher-value tasks.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Cost Savings:</strong> Reduces pressure on branch infrastructure and avoids CAPEX/OPEX involved in opening or maintaining additional branches.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Enhanced Compliance:</strong> Helps fulfill regulatory mandates for financial inclusion and accessibility, aligning with RBI guidelines.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Uniform Service Delivery:</strong> Banks leverage a shared infrastructure model, reducing implementation effort while ensuring consistency across geographies.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-6">
+                        <h4 class="text-xl font-semibold text-blue-700 mb-3">Key Features:</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Broad Range of Services:</strong> Includes Cash Withdrawal & Deposit, Cheque Pick-up, Demand Draft Request, Life Certificate Submission (especially for pensioners), KYC Document Pick-up, and Form 15G/15H Collection.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Secure, Tracked, and Verified Transactions:</strong> Ensures security with OTP-based customer authentication, mobile app-enabled real-time tracking, and eReceipts/automated service logs for a full audit trail.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Robust Technology Stack:</strong> Centralized platform accessible by all partner banks, with integration-ready APIs and mobile workforce management (geo-tagging, time-stamped logs).</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Ease for Bank Staff:</strong> Provides a dashboard for service monitoring and MIS reports, an intuitive service request interface, and escalation workflows for issue resolution.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Pan-India Network:</strong> Leverages a shared agent network across locations with standardized training and branding for all field agents.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-blue-100 p-4 rounded-lg shadow-md mb-6">
+                        <h4 class="text-xl font-semibold text-blue-800 mb-2">Customer Benefit:</h4>
+                        <p class="text-gray-800 text-lg">
+                            <strong class="text-blue-900">Ultimate Convenience and Inclusion.</strong> "Banking that comes to you — safely, securely, and at your doorstep." No need to physically visit a bank branch, especially critical for senior citizens, differently-abled individuals, and rural/remote customers. Services are provided at the comfort of home without compromising on security or authenticity.
+                        </p>
+                    </div>
+
+                   <!-- Customer Journey: Benefits Unlocked (Features as Benefits) -->
+                    <div class="mb-6 bg-blue-100 p-4 rounded-lg shadow-md">
+                        <h4 class="text-xl font-semibold text-blue-800 mb-3">Benefits Unlocked with Doorstep Banking:</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="p-3 bg-white rounded-lg shadow-sm flex items-center space-x-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                <p class="text-gray-800 font-medium">Time Saved: No more waiting in queues.</p>
+                            </div>
+                            <div class="p-3 bg-white rounded-lg shadow-sm flex items-center space-x-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                <p class="text-gray-800 font-medium">Effortless Access: Banking from your home.</p>
+                            </div>
+                            <div class="p-3 bg-white rounded-lg shadow-sm flex items-center space-x-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                <p class="text-gray-800 font-medium">Enhanced Security: Verified transactions.</p>
+                            </div>
+                            <div class="p-3 bg-white rounded-lg shadow-sm flex items-center space-x-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                <p class="text-gray-800 font-medium">Inclusion for All: No barriers to banking.</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="mb-6">
+                        <h4 class="text-xl font-semibold text-blue-700 mb-3">Projected/Conceptual Benefits:</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
+                            <div class="bg-blue-100 p-4 rounded-lg shadow-sm">
+                                <p class="text-4xl font-bold text-blue-800">~65%</p>
+                                <p class="text-gray-700">Reduction in footfall for routine services</p>
+                            </div>
+                            <div class="bg-blue-100 p-4 rounded-lg shadow-sm">
+                                <p class="text-4xl font-bold text-blue-800">30–40%</p>
+                                <p class="text-gray-700">Faster turnaround for life certificate submission</p>
+                            </div>
+                            <div class="bg-blue-100 p-4 rounded-lg shadow-sm">
+                                <p class="text-4xl font-bold text-blue-800">Improved</p>
+                                <p class="text-gray-700">NPS/Customer Satisfaction Scores</p>
+                            </div>
+                            <div class="bg-blue-100 p-4 rounded-lg shadow-sm">
+                                <p class="text-4xl font-bold text-blue-800">5x</p>
+                                <p class="text-gray-700">Increased service accessibility in rural regions</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Storyboard Image -->
+                    <div class="w-[768px] h-[1158px] mx-auto bg-gray-200 rounded-lg flex items-center justify-center text-gray-500 mb-4 overflow-hidden">
+                        <img src="Banking at Your Doorstep.png" alt="Doorstep Banking Storyboard" class="w-full h-full object-cover">
+                    </div>
+                    <button class="interactive-button bg-gray-600 hover:bg-gray-700" onclick="hideProductDetails()">Back to Products</button>
+                </div>
+
+                <!-- Baanknet.com Details -->
+                <div id="baanknet-details" class="hidden-section product-detail-card bg-blue-50 p-6 rounded-lg shadow-inner mt-4">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-4">Baanknet.com - Deep Dive</h3>
+                    <!-- Multi-choice quiz for Baanknet.com -->
+                    <div id="baanknet-quiz-container" class="quiz-container w-full max-w-2xl mx-auto mb-6">
+                        <!-- Quiz content will be rendered here by JavaScript -->
+                    </div>
+
+                    <div class="mb-6">
+                        <h4 class="text-xl font-semibold text-blue-700 mb-3">Problems Solved for Banks:</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">NPA Recovery Optimization:</strong> Traditional recovery channels are fragmented, opaque, and slow. Baanknet accelerates asset liquidation and NPA resolution via a unified digital auction platform.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Transparency and Compliance:</strong> Manual and localized auction processes often lack audit trails. Baanknet ensures end-to-end traceability and regulatory compliance (e.g., SARFAESI, IBC norms).</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Wider Market Reach:</strong> Auctions are often limited to local advertising or single-bank efforts. Baanknet aggregates listings from multiple banks, boosting visibility to national buyers and investors.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Operational Efficiency:</strong> Managing auctions is resource-heavy for bank staff. Baanknet digitizes the auction lifecycle, reducing manual workload, errors, and TATs.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-6">
+                        <h4 class="text-xl font-semibold text-blue-700 mb-3">Key Features:</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Diverse Asset Listings:</strong> Residential, commercial, industrial properties, vehicles, agricultural land, warehouses, and movable assets from multiple PSBs and FIs, not just one bank.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Smart Auction Engine:</strong> Real-time bidding with auto-bid options, date scheduling, bidder management, result declaration, dynamic reserve pricing, and multi-lot configurations.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Security & Legal Compliance:</strong> Secured data exchange and user access, compliant with DRT, SARFAESI, Insolvency, and SEBI e-auction norms.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Bank-Facing Admin Portal:</strong> Intuitive dashboards for asset listing, auction configuration, document uploads, access controls, approval workflows, and MIS reports.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Buyer Interface:</strong> Seamless discovery and filtering by location, asset class, price, auction date, with alerts and reminders, real-time participation, and downloadable documents.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-6">
+                        <h4 class="text-xl font-semibold text-blue-700 mb-3">Metrics / Conceptual Benefits:</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
+                            <div class="bg-blue-100 p-4 rounded-lg shadow-sm">
+                                <p class="text-4xl font-bold text-blue-800">3X</p>
+                                <p class="text-gray-700">Increase in average bidder participation</p>
+                            </div>
+                            <div class="bg-blue-100 p-4 rounded-lg shadow-sm">
+                                <p class="text-4xl font-bold text-blue-800">50%</p>
+                                <p class="text-gray-700">Faster asset disposal cycle</p>
+                            </div>
+                            <div class="bg-blue-100 p-4 rounded-lg shadow-sm">
+                                <p class="text-4xl font-bold text-blue-800">15%</p>
+                                <p class="text-gray-700">Higher asset realization value</p>
+                            </div>
+                            <div class="bg-blue-100 p-4 rounded-lg shadow-sm">
+                                <p class="text-4xl font-bold text-blue-800">Zero</p>
+                                <p class="text-700">Paper Trail – fully digital & traceable</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Baanknet Flow Infographic -->
+                    <div class="w-full max-w-2xl mx-auto bg-gray-200 rounded-lg flex items-center justify-center text-gray-500 mb-4 overflow-hidden">
+                        <img src="Baanknet Flow.png" alt="Baanknet.com Workflow Infographic" class="w-full h-full object-contain">
+                    </div>
+                    <button class="interactive-button bg-gray-600 hover:bg-gray-700" onclick="hideProductDetails()">Back to Products</button>
+                </div>
+
+                <!-- DBCP Details -->
+                <div id="dbcp-details" class="hidden-section product-detail-card bg-blue-50 p-6 rounded-lg shadow-inner mt-4">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-4">Digital Balance Confirmation Portal (DBCP) - Deep Dive</h3>
+                    <!-- Multi-choice quiz for DBCP -->
+                    <div id="dbcp-quiz-container" class="quiz-container w-full max-w-2xl mx-auto mb-6">
+                        <!-- Quiz content will be rendered here by JavaScript -->
+                    </div>
+
+                    <div class="mb-6">
+                        <h4 class="text-xl font-semibold text-blue-700 mb-3">Problems DBCP Solves for Banks and Auditors:</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Manual Dispatches & Follow-ups:</strong> Eliminates letters or emails manually sent, delayed, or missed, streamlining the process.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Data Entry Errors:</strong> Mitigates inconsistencies and version mismatches caused by manual filling.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Time-Consuming Processes:</strong> Reduces auditor waiting times and bank manpower spent chasing replies.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">SA 505 Compliance Gaps:</strong> Ensures manual processes meet the standards of external confirmations as per SA 505.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Lack of Audit Trail:</strong> Provides clear verification of response receipt, modification, and authorized origination.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-6">
+                        <h4 class="text-xl font-semibold text-blue-700 mb-3">Key Features:</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="p-4 bg-blue-100 rounded-lg shadow-sm">
+                                <h5 class="font-semibold text-blue-800 mb-2">For Banks:</h5>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li class="flex items-start"><span class="text-blue-600 mr-2 mt-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                    </span>Single Dashboard to receive & respond to all confirmation requests</li>
+                                    <li class="flex items-start"><span class="text-blue-600 mr-2 mt-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                    </span>Custom Authorization Matrix for internal validations</li>
+                                    <li class="flex items-start"><span class="text-blue-600 mr-2 mt-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                    </span>Automated Workflow & MIS Reporting</li>
+                                </ul>
+                            </div>
+                            <div class="p-4 bg-blue-100 rounded-lg shadow-sm">
+                                <h5 class="font-semibold text-blue-800 mb-2">For Auditors:</h5>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li class="flex items-start"><span class="text-blue-600 mr-2 mt-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                    </span>Digital Request Creation using official credentials</li>
+                                    <li class="flex items-start"><span class="text-blue-600 mr-2 mt-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                    </span>Real-Time Tracking of request status (sent, acknowledged, responded)</li>
+                                    <li class="flex items-start"><span class="text-blue-600 mr-2 mt-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                    </span>Immutable Audit Trail ensuring non-repudiation</li>
+                                </ul>
+                            </div>
+                            <div class="p-4 bg-blue-100 rounded-lg shadow-sm col-span-full">
+                                <h5 class="font-semibold text-blue-800 mb-2">For All:</h5>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li class="flex items-start"><span class="text-blue-600 mr-2 mt-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                    </span>End-to-End Encryption</li>
+                                    <li class="flex items-start"><span class="text-blue-600 mr-2 mt-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                    </span>Access Control & Role-Based Permissions</li>
+                                    <li class="flex items-start"><span class="text-blue-600 mr-2 mt-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                    </span>Integration-Ready APIs for core banking and audit systems</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-100 p-4 rounded-lg shadow-md mb-6">
+                        <h4 class="text-xl font-semibold text-blue-800 mb-2">Primary Benefit for End Customers (Businesses/Clients of Banks):</h4>
+                        <p class="text-gray-800 text-lg">
+                            DBCP significantly **reduces disruption** to end businesses during audit season by offering:
+                        </p>
+                        <ul class="space-y-2 list-disc list-inside ml-4 text-gray-700">
+                            <li>**No Need for Physical Coordination:** Eliminates manual back-and-forth.</li>
+                            <li>**Faster Closure of Audits:** Expedites the overall audit process.</li>
+                            <li>**Accuracy in Responses:** Ensures reliable data due to structured digital inputs.</li>
+                            <li>**Confidence in Compliance:** Helps meet standards and timelines efficiently.</li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-6">
+                        <h4 class="text-xl font-semibold text-blue-700 mb-3">Metrics & Conceptual Benefits:</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
+                            <div class="bg-blue-100 p-4 rounded-lg shadow-sm">
+                                <p class="text-4xl font-bold text-blue-800">60–70%</p>
+                                <p class="text-gray-700">Reduction in confirmation cycle time</p>
+                            </div>
+                            <div class="bg-blue-100 p-4 rounded-lg shadow-sm">
+                                <p class="text-4xl font-bold text-blue-800">Near 100%</p>
+                                <p class="text-gray-700">Accuracy in confirmation records</p>
+                            </div>
+                            <div class="bg-blue-100 p-4 rounded-lg shadow-sm">
+                                <p class="text-4xl font-bold text-blue-800">Significant</p>
+                                <p class="text-gray-700">Cost Savings for banks & auditors</p>
+                            </div>
+                            <div class="bg-blue-100 p-4 rounded-lg shadow-sm">
+                                <p class="text-4xl font-bold text-blue-800">Improved</p>
+                                <p class="text-gray-700">Repeatability & Scalability</p>
+                            </div>
+                            <div class="bg-blue-100 p-4 rounded-lg shadow-sm col-span-full">
+                                <p class="text-4xl font-bold text-blue-800">Enhanced</p>
+                                <p class="text-gray-700">SA 505 Compliance Rate</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DBCP Flyer Image -->
+                    <div class="w-full max-w-2xl mx-auto bg-gray-200 rounded-lg flex items-center justify-center text-gray-500 mb-4 overflow-hidden">
+                        <img src="DBCP Flyer.png" alt="DBCP Digital Balance Confirmation Portal Flyer" class="w-full h-full object-contain">
+                    </div>
+                    <button class="interactive-button bg-gray-600 hover:bg-gray-700" onclick="hideProductDetails()">Back to Products</button>
+                </div>
+
+                <!-- PSBXCHANGE Details -->
+                <div id="psb-exchange-details" class="hidden-section product-detail-card bg-blue-50 p-6 rounded-lg shadow-inner mt-4">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-4">PSBXCHANGE (Digital Supply Chain Finance) - Deep Dive</h3>
+                    <!-- Multi-choice quiz for PSBXCHANGE -->
+                    <div id="psb-exchange-quiz-container" class="quiz-container w-full max-w-2xl mx-auto mb-6">
+                        <!-- Quiz content will be rendered here by JavaScript -->
+                    </div>
+
+                    <div class="mb-6">
+                        <h4 class="text-xl font-semibold text-blue-700 mb-3">Problems Solved for Banks:</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Low SCF Penetration:</strong> Addresses the limited SCF offerings by PSBs through a ready digital platform tailored for public banks.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Operational Inefficiency:</strong> Eliminates repetitive integration efforts with multiple fintechs by offering a single gateway.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Legacy Tech Limitations:</strong> Offers a modern digital tech stack that overcomes outdated systems.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Limited Market Reach:</strong> Leverages fintech tie-ups to access micro-markets and underserved tiers (2 & 3).</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Lack of Real-Time Insight:</strong> Enables performance tracking of fintech partnerships, increasing visibility and accountability.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-6">
+                        <h4 class="text-xl font-semibold text-blue-700 mb-3">Problems Solved for Businesses (Suppliers/Buyers/MSMEs):</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Liquidity Gaps:</strong> Immediate access to working capital through invoice-based lending options (DF, VF, PID, SID).</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Slow Financing Cycles:</strong> Digitization enables faster approvals and disbursals.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Limited Access to Banks:</strong> Aggregated access to multiple banks through a single platform.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Document and Compliance Burden:</strong> Reduces paperwork through seamless digital onboarding and document submission (bank statements, GST, CIBIL, MCA data, etc.).</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-6">
+                        <h4 class="text-xl font-semibold text-blue-700 mb-3">Key Features:</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Comprehensive SCF Product Suite:</strong> DF, VF, PID, SID, Reverse Factoring – all in one platform.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Multi-Fintech Aggregator:</strong> Access to several fintech partners via single integration.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Real-Time Dashboard:</strong> Tracks performance, onboarding status, and transactions.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Customer-Consented Data Access:</strong> Auto-fetch bank statements, GST, CIBIL, MCA data securely.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">ERP-Compatible & Scalable:</strong> Potential integration with client ERPs for transaction syncing.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-1-13h2v6h-2V7m0 8h2v2h-2v-2Z"/></svg>
+                                </span>
+                                <p class="text-gray-800"><strong class="text-blue-800">Technology & Training Support:</strong> Provides best practices and PSB-specific SCF training modules.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-blue-100 p-4 rounded-lg shadow-md mb-6">
+                        <h4 class="text-xl font-semibold text-blue-800 mb-2">Primary Benefit for End Businesses (MSMEs):</h4>
+                        <p class="text-gray-800 text-lg">
+                            <strong class="text-blue-900">Fast and easy access to affordable working capital,</strong> powered by digital verification, lower turnaround time, and multiple financiers on one platform—resulting in better cash flow and business continuity.
+                        </p>
+                    </div>
+
+                    <div class="mb-6">
+                        <h4 class="text-xl font-semibold text-blue-700 mb-3">Conceptual/Quantitative Benefits:</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
+                            <div class="bg-blue-100 p-4 rounded-lg shadow-sm">
+                                <p class="text-4xl font-bold text-blue-800">70–80%</p>
+                                <p class="text-gray-700">Reduction in financing turnaround time</p>
+                            </div>
+                            <div class="bg-blue-100 p-4 rounded-lg shadow-sm">
+                                <p class="text-4xl font-bold text-blue-800">10–15%</p>
+                                <p class="text-gray-700">Lower cost of capital</p>
+                            </div>
+                            <div class="bg-blue-100 p-4 rounded-lg shadow-sm">
+                                <p class="text-4xl font-bold text-blue-800">2x to 3x</p>
+                                <p class="text-gray-700">Increase in SCF transaction volume for banks</p>
+                            </div>
+                            <div class="bg-blue-100 p-4 rounded-lg shadow-sm">
+                                <p class="text-4xl font-bold text-blue-800">Significant</p>
+                                <p class="text-gray-700">Reduction in onboarding & compliance effort</p>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- PSBXCHANGE Image -->
+                    <div class="w-full max-w-2xl mx-auto bg-gray-200 rounded-lg flex items-center justify-center text-gray-500 mb-4 overflow-hidden">
+                        <img src="PSBXCHANGE.png" alt="PSBXCHANGE Digital Supply Chain Finance Platform" class="w-full h-full object-contain">
+                    </div>
+                    <button class="interactive-button bg-gray-600 hover:bg-gray-700" onclick="hideProductDetails()">Back to Products</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer Questions Section (New) -->
+        <section id="customer-questions" class="hidden-section bg-white rounded-xl shadow-lg p-8 mb-8 text-center">
+            <h2 class="text-3xl font-bold text-blue-800 mb-6">What are you looking for today?</h2>
+            <p class="text-lg text-gray-700 mb-8">Choose the option that best describes your need:</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                <button class="customer-choice-button" onclick="handleCustomerChoice('bank-at-home')">
+                    Do you want to bank at home?
+                </button>
+                <button class="customer-choice-button" onclick="handleCustomerChoice('buy-a-house')">
+                    Do you want to buy a house?
+                </button>
+                <button class="customer-choice-button" onclick="handleCustomerChoice('is-ca')">
+                    Are you a CA (Chartered Accountant)?
+                </button>
+                <button class="customer-choice-button" onclick="handleCustomerChoice('is-msme')">
+                    Are you an MSME (Micro, Small, and Medium Enterprise)?
+                </button>
+            </div>
+        </section>
+	<!-- Banker Quiz Section (New) -->
+        <section id="banker-quiz-section" class="hidden-section bg-white rounded-xl shadow-lg p-8 mb-8 text-center">
+            <h2 class="text-3xl font-bold text-blue-800 mb-6">Banker's Insight Challenge!</h2>
+            <p class="text-lg text-gray-700 mb-8">Test your knowledge on how PSB Alliance empowers banks:</p>
+
+            <div id="banker-quiz-container" class="quiz-container w-full max-w-2xl mx-auto mb-6">
+                <!-- Banker quiz content will be rendered here by JavaScript -->
+            </div>
+
+            <button class="interactive-button banker-quiz-back-button" onclick="showSection('home')">Back to Home</button>
+        </section>
+        <!-- Why Partner Section -->
+        <section id="why-partner" class="hidden-section bg-white rounded-xl shadow-lg p-8 mb-8">
+            <h2 class="text-3xl font-bold text-blue-800 mb-6">Why Partner with PSB Alliance?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">Deep Industry Knowledge</h3>
+                    <p class="text-gray-700">Born from the collective expertise of 12 Public Sector Banks, we understand the unique challenges and opportunities within the Indian financial landscape.</p>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">Future-Ready Technology</h3>
+                    <p class="text-700">Our solutions are built with scalability, security, and innovation at their core, ensuring your institution stays ahead in the digital age.</p>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">Collaborative Partnership</h3>
+                    <p class="text-gray-700">We work hand-in-hand with our partners, offering dedicated support and custom solutions to meet evolving needs.</p>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">Driving Digital Transformation</h3>
+                    <p class="text-gray-700">Join us in leading the charge towards a more efficient, accessible, and digitally advanced banking ecosystem in India.</p>
+                </div>
+            </div>
+            <!-- Replaced central visual element with logo.png -->
+            <div class="w-full max-w-xs mx-auto mt-8 rounded-lg overflow-hidden">
+                <img src="logo.png" alt="PSB Alliance Logo" class="w-full h-auto object-contain">
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="hidden-section bg-white rounded-xl shadow-lg p-8 mb-8 text-center">
+            <h2 class="text-3xl font-bold text-blue-800 mb-6">Connect with PSB Alliance</h2>
+            <p class="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
+                Ready to explore how PSB Alliance can empower your bank's digital journey? Reach out to us today!
+            </p>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8">
+                <div class="flex flex-col items-center">
+                    <p class="text-xl font-semibold text-blue-700 mb-2">Visit Our Website</p>
+                    <a href="https://www.psballiance.com" target="_blank" class="text-blue-600 hover:underline text-lg">www.psballiance.com</a>
+                </div>
+                <div class="flex flex-col items-center">
+                    <p class="text-xl font-semibold text-blue-700 mb-2">Scan for More Info</p>
+                    <!-- Updated QR Code Image Path -->
+                    <img src="PSBA QR.png" alt="QR Code for PSB Alliance Website" class="w-36 h-36 rounded-lg shadow-md">
+                </div>
+                <div class="flex flex-col items-center">
+                    <p class="text-xl font-semibold text-blue-700 mb-2">Follow Us</p>
+                    <div class="flex space-x-4">
+                        <!-- Placeholder for social media icons/links -->
+                        <a href="https://www.youtube.com/channel/your-youtube-channel" target="_blank" class="text-red-600 hover:text-red-700 text-3xl">
+                            <!-- YouTube Icon (using a simple SVG as an example) -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m4.5 10.5L9 16V8l7.5 4.5Z"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/soultalkbyneha/" target="_blank" class="text-pink-600 hover:text-pink-700 text-3xl">
+                             <!-- Instagram Icon (using a simple SVG as an example) -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2m-.2 2A4.8 4.8 0 0 0 4 7.6v8.8C4 19.4 4.6 20 7.2 20h9.6c2.6 0 3.2-.6 3.2-3.2V7.6C20 4.6 19.4 4 16.8 4H7.6m8.4 2.8c0 .8-.6 1.4-1.4 1.4s-1.4-.6-1.4-1.4s.6-1.4 1.4-1.4s1.4.6 1.4 1.4M12 9a6 6 0 1 0 0 12a6 6 0 0 0 0-12m0 2a4 4 0 1 1 0 8a4 4 0 0 1 0-8"/></svg>
+                        </a>
+                        <!-- Add other social media icons as needed -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-800 text-white text-center p-4 mt-8">
+        <p>&copy; 2025 PSB Alliance. All rights reserved.</p>
+    </footer>
+
+    <!-- Journey Transition & Node Info Message Overlay -->
+    <div id="journey-message-overlay">
+        <div class="journey-message-box">
+            <h3 id="journey-message-title" class="text-3xl font-bold text-blue-800 mb-4"></h3>
+            <p id="journey-message-text" class="text-lg text-gray-700 mb-6"></p>
+            <button class="interactive-button" onclick="closeOverlay()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Global variable to track if the user is a 'banker' or 'customer'
+        let currentPersona = '';
+
+        // Data structure for multi-choice questions
+        const productQuestions = {
+            'doorstep-banking': [
+                {
+                    question: "Which of these is a key benefit of Doorstep Banking for customers?",
+                    options: [
+                        { text: "Access to international fund transfers", isCorrect: false },
+                        { text: "No need to visit a bank branch for routine services", isCorrect: true },
+                        { text: "Specialized investment advisory", isCorrect: false },
+                        { text: "Instant loan approvals", isCorrect: false }
+                    ],
+                    feedback: "Doorstep Banking brings essential services directly to the customer, enhancing convenience and inclusion.",
+                    correctEmoji: '✅',
+                    incorrectEmoji: '❌'
+                }
+            ],
+            'baanknet': [
+                {
+                    question: "How does Baanknet.com primarily help banks with NPA assets?",
+                    options: [
+                        { text: "By offering direct loans to defaulters", isCorrect: false },
+                        { text: "By providing a unified digital platform for auctioning properties", isCorrect: true },
+                        { text: "By managing bank's internal audit processes", isCorrect: false },
+                        { text: "By facilitating international trade finance", isCorrect: false }
+                    ],
+                    feedback: "Baanknet.com centralizes and digitizes the auction process for NPA properties, improving recovery and transparency.",
+                    correctEmoji: '✅',
+                    incorrectEmoji: '❌'
+                }
+            ],
+            'dbcp': [
+                {
+                    question: "What is the main advantage of DBCP for auditors?",
+                    options: [
+                        { text: "It helps them find new clients", isCorrect: false },
+                        { text: "It provides real-time stock market data", isCorrect: false },
+                        { text: "It streamlines balance confirmation with secure digital responses", isCorrect: true },
+                        { text: "It offers tax consultation services", isCorrect: false }
+                    ],
+                    feedback: "DBCP digitizes and secures the balance confirmation process, making audits faster, more reliable, and compliant with SA 505.",
+                    correctEmoji: '✅',
+                    incorrectEmoji: '❌'
+                }
+            ],
+            'psb-exchange': [
+                {
+                    question: "PSBXCHANGE helps MSMEs by providing:",
+                    options: [
+                        { text: "Free legal advice for business setup", isCorrect: false },
+                        { text: "Access to affordable and fast working capital through digital SCF", isCorrect: true },
+                        { text: "Subsidies for office rent", isCorrect: false },
+                        { text: "International travel grants", isCorrect: false }
+                    ],
+                    feedback: "PSBXCHANGE facilitates quick and affordable access to working capital for MSMEs via digital supply chain finance, improving liquidity.",
+                    correctEmoji: '✅',
+                    incorrectEmoji: '❌'
+                }
+            ],
+            // NEW: Banker-specific questions
+            'banker-quiz': [
+                {
+                    question: "Which PSB Alliance product helps banks optimize NPA recovery and ensure transparency?",
+                    options: [
+                        { text: "Doorstep Banking Services", isCorrect: false },
+                        { text: "Baanknet.com", isCorrect: true },
+                        { text: "Digital Balance Confirmation Portal (DBCP)", isCorrect: false },
+                        { text: "PSBXCHANGE", isCorrect: false }
+                    ],
+                    feedback: "Baanknet.com provides a unified digital platform for auctioning NPA properties, enhancing recovery and transparency for banks.",
+                    correctEmoji: '✅',
+                    incorrectEmoji: '❌'
+                },
+                {
+                    question: "A key benefit of Doorstep Banking for banks is:",
+                    options: [
+                        { text: "Increased physical branch footfall", isCorrect: false },
+                        { text: "Reduced operational costs and expanded customer reach", isCorrect: true },
+                        { text: "Direct management of international trade finance", isCorrect: false },
+                        { text: "Development of new investment products", isCorrect: false }
+                    ],
+                    feedback: "Doorstep Banking helps banks reduce operational costs by streamlining routine services and expands customer reach, especially for vulnerable segments.",
+                    correctEmoji: '✅',
+                    incorrectEmoji: '❌'
+                },
+                {
+                    question: "How does DBCP primarily benefit banks in their auditing processes?",
+                    options: [
+                        { text: "By offering real-time stock market analysis", isCorrect: false },
+                        { text: "By automating balance confirmations and ensuring SA 505 compliance", isCorrect: true },
+                        { text: "By providing legal advisory for financial disputes", isCorrect: false },
+                        { text: "By facilitating inter-bank lending", isCorrect: false }
+                    ],
+                    feedback: "DBCP streamlines and secures the balance confirmation process for auditors and banks, ensuring compliance with SA 505.",
+                    correctEmoji: '✅',
+                    incorrectEmoji: '❌'
+                },
+                {
+                    question: "PSBXCHANGE helps banks by addressing:",
+                    options: [
+                        { text: "The need for physical cash management solutions", isCorrect: false },
+                        { text: "Low Supply Chain Finance (SCF) penetration and operational inefficiency", isCorrect: true },
+                        { text: "Compliance with international banking regulations only", isCorrect: false },
+                        { text: "The need for new branch expansion strategies", isCorrect: false }
+                    ],
+                    feedback: "PSBXCHANGE provides a digital platform to increase SCF penetration and improve operational efficiency for banks in supply chain finance.",
+                    correctEmoji: '✅',
+                    incorrectEmoji: '❌'
+                }
+            ]
+        };
+
+        /**
+         * Renders a multi-choice quiz in the specified container.
+         * @param {string} containerId The ID of the HTML element to render the quiz into.
+         * @param {string} productId The ID of the product to get questions for.
+         */
+        function renderQuiz(containerId, productId) {
+            const quizContainer = document.getElementById(containerId);
+            if (!quizContainer) {
+                console.error('Quiz container not found:', containerId);
+                return;
+            }
+
+            const questions = productQuestions[productId];
+            if (!questions || questions.length === 0) {
+                quizContainer.innerHTML = '<p class="text-gray-600 text-center">No quiz available for this product yet.</p>';
+                return;
+            }
+
+            // For simplicity, we'll just use the first question for each product
+            const currentQuestion = questions[0];
+
+            quizContainer.innerHTML = `
+                <p class="text-gray-600 mb-4 text-center">Test your knowledge!</p>
+                <div class="quiz-content w-full">
+                    <h4 class="quiz-question">${currentQuestion.question}</h4>
+                    <div class="quiz-options">
+                        <!-- Options will be dynamically added here -->
+                    </div>
+                    <div class="quiz-feedback" style="display:none;"></div>
+                    <div class="quiz-action-buttons" style="display:none;">
+                        <button class="interactive-button try-again-btn bg-gray-500 hover:bg-gray-600">Try Again</button>
+                        <button class="interactive-button next-product-btn">Next Product</button>
+                    </div>
+                </div>
+            `;
+
+            const optionsContainer = quizContainer.querySelector('.quiz-options');
+            const feedbackElement = quizContainer.querySelector('.quiz-feedback');
+            const actionButtonsContainer = quizContainer.querySelector('.quiz-action-buttons');
+            const tryAgainBtn = quizContainer.querySelector('.try-again-btn');
+            const nextProductBtn = quizContainer.querySelector('.next-product-btn');
+
+            currentQuestion.options.forEach((option, index) => {
+                const button = document.createElement('button');
+                button.className = 'quiz-option-button';
+                button.textContent = option.text;
+                button.dataset.isCorrect = option.isCorrect;
+                button.addEventListener('click', () => checkAnswer(button, option.isCorrect, feedbackElement, optionsContainer, actionButtonsContainer, currentQuestion));
+                optionsContainer.appendChild(button);
+            });
+
+            tryAgainBtn.addEventListener('click', () => resetQuiz(optionsContainer, feedbackElement, actionButtonsContainer));
+            nextProductBtn.addEventListener('click', () => {
+                // Logic to navigate to next product or back to products list
+                window.hideProductDetails();
+                window.showSection('products');
+            });
+        }
+
+        /**
+         * Checks the selected answer and provides feedback.
+         * @param {HTMLElement} selectedButton The button that was clicked.
+         * @param {boolean} isCorrect Whether the selected answer is correct.
+         * @param {HTMLElement} feedbackElement The element to display feedback.
+         * @param {HTMLElement} optionsContainer The container for options.
+         * @param {HTMLElement} actionButtonsContainer The container for action buttons.
+         * @param {Object} questionData The data for the current question.
+         */
+        function checkAnswer(selectedButton, isCorrect, feedbackElement, optionsContainer, actionButtonsContainer, questionData) {
+            // Disable all option buttons after selection
+            Array.from(optionsContainer.children).forEach(button => {
+                button.classList.add('disabled');
+                button.removeEventListener('click', () => {}); // Remove event listener
+            });
+
+            feedbackElement.style.display = 'block';
+            actionButtonsContainer.style.display = 'flex';
+
+            if (isCorrect) {
+                selectedButton.classList.add('correct');
+                feedbackElement.classList.add('correct');
+                feedbackElement.classList.remove('incorrect');
+                feedbackElement.innerHTML = `${questionData.correctEmoji} Correct! ${questionData.feedback}`;
+                quizCompleted(true);
+            } else {
+                selectedButton.classList.add('incorrect');
+                feedbackElement.classList.add('incorrect');
+                feedbackElement.classList.remove('correct');
+                feedbackElement.innerHTML = `${questionData.incorrectEmoji} Incorrect. ${questionData.feedback}`;
+                // Highlight the correct answer if incorrect was chosen
+                Array.from(optionsContainer.children).forEach(button => {
+                    if (button.dataset.isCorrect === 'true') {
+                        button.classList.add('correct');
+                    }
+                });
+                quizCompleted(false);
+            }
+        }
+
+        /**
+         * Resets the quiz to its initial state.
+         * @param {HTMLElement} optionsContainer The container for options.
+         * @param {HTMLElement} feedbackElement The element to display feedback.
+         * @param {HTMLElement} actionButtonsContainer The container for action buttons.
+         */
+        function resetQuiz(optionsContainer, feedbackElement, actionButtonsContainer) {
+            Array.from(optionsContainer.children).forEach(button => {
+                button.classList.remove('correct', 'incorrect', 'disabled');
+                // Re-add event listeners
+                const productId = optionsContainer.closest('.quiz-container').id.replace('-quiz-container', '');
+                const questionData = productQuestions[productId][0]; // Assuming first question
+                button.addEventListener('click', () => checkAnswer(button, button.dataset.isCorrect === 'true', feedbackElement, optionsContainer, actionButtonsContainer, questionData));
+            });
+            feedbackElement.style.display = 'none';
+            actionButtonsContainer.style.display = 'none';
+        }
+
+        /**
+         * Handles actions after the quiz is completed (correct or incorrect).
+         * @param {boolean} success True if the quiz was answered correctly.
+         */
+        function quizCompleted(success) {
+            // No specific global cleanup needed as quiz is self-contained within product detail
+            // The action buttons will guide the user to try again or navigate away.
+        }
+
+
+        // JavaScript for section navigation and product details display
+
+        let currentJourneyTarget = ''; // To store the next section after the message
+
+        // Function to show a specific section and hide others
+        window.showSection = function(sectionId) {
+            const sections = document.querySelectorAll('main section');
+            sections.forEach(section => {
+                section.classList.remove('section-active');
+                section.classList.add('hidden-section');
+            });
+
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.remove('hidden-section');
+                targetSection.classList.add('section-active');
+            }
+
+            // Update active state in navigation
+            const navButtons = document.querySelectorAll('.nav-item');
+            navButtons.forEach(button => {
+                if (button.dataset.section === sectionId) {
+                    button.classList.add('active');
+                } else {
+                    button.classList.remove('active');
+                }
+            });
+
+            // Hide any open product details when switching main sections
+            window.hideProductDetails();
+        }
+
+        // Function to show specific product details and hide others
+        window.showProductDetails = function(productId) {
+            const productDetailCards = document.querySelectorAll('.product-detail-card');
+            productDetailCards.forEach(card => {
+                card.classList.remove('section-active');
+                card.classList.add('hidden-section');
+            });
+
+            const targetProductDetail = document.getElementById(productId + '-details');
+            if (targetProductDetail) {
+                targetProductDetail.classList.remove('hidden-section');
+                targetProductDetail.classList.add('section-active');
+                // Scroll to the product details section
+                targetProductDetail.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                // Render the quiz for the opened product
+                renderQuiz(productId + '-quiz-container', productId);
+            }
+        }
+
+        // Function to hide all product details
+        window.hideProductDetails = function() {
+            const productDetailCards = document.querySelectorAll('.product-detail-card');
+            productDetailCards.forEach(card => {
+                card.classList.remove('section-active');
+                card.classList.add('hidden-section');
+            });
+        }
+
+         // Function to handle game-like journey start
+        window.startJourney = function(persona) {
+            currentPersona = persona; // Set the global persona variable
+
+            const overlay = document.getElementById('journey-message-overlay');
+            const title = document.getElementById('journey-message-title');
+            const text = document.getElementById('journey-message-text');
+            const continueButton = overlay.querySelector('.interactive-button');
+
+            if (persona === 'banker') {
+                title.textContent = "Your Bank's Digital Transformation Quest!";
+                text.textContent = "Welcome, Visionary Banker! Let's optimize operations, enhance security, and drive growth for the bank of tomorrow, together.";
+                currentJourneyTarget = 'banker-quiz-section'; // NEW: Target banker quiz section
+                continueButton.onclick = continueJourney;
+                continueButton.textContent = "Continue";
+            } else if (persona === 'customer') {
+                title.textContent = "Your Personal Banking Convenience Journey!";
+                text.textContent = "Hello, Valued Customer! Get ready for banking that comes to you – access services anytime, anywhere, with ease.";
+                currentJourneyTarget = 'customer-questions'; // Target customer questions section
+                continueButton.onclick = continueJourney;
+                continueButton.textContent = "Continue";
+            }
+
+            overlay.classList.add('active');
+        }
+
+        // Function to continue after the journey message
+        function continueJourney() {
+            const overlay = document.getElementById('journey-message-overlay');
+            overlay.classList.remove('active');
+
+            if (currentJourneyTarget === 'products') {
+                window.showSection('products');
+            } else if (currentJourneyTarget === 'customer-questions') {
+                window.showSection('customer-questions'); // Go to the new customer questions section
+            } else if (currentJourneyTarget === 'banker-quiz-section') { // NEW: Handle banker quiz section
+                window.showSection('banker-quiz-section');
+                renderQuiz('banker-quiz-container', 'banker-quiz'); // Render the banker quiz
+            }
+            currentJourneyTarget = ''; // Reset
+        }
+
+        // Function to handle customer's specific product choice
+        window.handleCustomerChoice = function(choice) {
+            let targetProductId = '';
+            switch (choice) {
+                case 'bank-at-home':
+                    targetProductId = 'doorstep-banking';
+                    break;
+                case 'buy-a-house':
+                    targetProductId = 'baanknet';
+                    break;
+                case 'is-ca':
+                    targetProductId = 'dbcp';
+                    break;
+                case 'is-msme':
+                    targetProductId = 'psb-exchange';
+                    break;
+                default:
+                    console.error('Unknown customer choice:', choice);
+                    return;
+            }
+            window.showSection('products'); // First navigate to products section
+            setTimeout(() => {
+                window.showProductDetails(targetProductId); // Then show specific product details
+            }, 300); // Small delay to ensure section transition
+        }
+
+
+        // Function to show node information pop-up
+        window.showNodeInfo = function(titleText, descriptionText) {
+            const overlay = document.getElementById('journey-message-overlay');
+            const title = document.getElementById('journey-message-title');
+            const text = document.getElementById('journey-message-text');
+            const closeButton = overlay.querySelector('.interactive-button');
+
+            title.textContent = titleText;
+            text.textContent = descriptionText;
+            closeButton.onclick = window.closeOverlay;
+            closeButton.textContent = "Close";
+
+            overlay.classList.add('active');
+        }
+
+        // Function to close any active overlay
+        window.closeOverlay = function() {
+            const overlay = document.getElementById('journey-message-overlay');
+            overlay.classList.remove('active');
+        }
+
+
+        // Function to animate numbers for impact statistics
+        function animateNumbers() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.dataset.target);
+                let current = 0;
+                const increment = target / 200; // Adjust for animation speed
+
+                const updateCounter = () => {
+                    if (current < target) {
+                        current += increment;
+                        stat.textContent = Math.ceil(current).toLocaleString(); // Format with commas
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        stat.textContent = target.toLocaleString();
+                    }
+                };
+                updateCounter();
+            });
+        }
+
+        // Intersection Observer to trigger number animation when in view
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5 // Trigger when 50% of the element is visible
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateNumbers();
+                    observer.unobserve(entry.target); // Stop observing once animated
+                }
+            });
+        }, observerOptions);
+
+        // Observe the first stat card to trigger animation for all
+        document.addEventListener('DOMContentLoaded', () => {
+            const firstStatCard = document.querySelector('.stat-card');
+            if (firstStatCard) {
+                observer.observe(firstStatCard);
+            }
+
+            // Event listeners for navigation buttons
+            const navButtons = document.querySelectorAll('.nav-item');
+            navButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    window.showSection(button.dataset.section);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
